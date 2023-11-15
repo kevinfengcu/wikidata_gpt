@@ -5,6 +5,10 @@
 #+ defaults:
 #+   - qid: example
 
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/>
+
 
 SELECT ?property ?propertyLabel ?object (COALESCE(?valueLabel, STR(?o)) AS ?value) WHERE {
   ?property wikibase:directClaim ?p;
