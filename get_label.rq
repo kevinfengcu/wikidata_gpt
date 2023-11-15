@@ -1,0 +1,14 @@
+#+ summary: Search entities based on label substring
+#+ endpoint: https://query.wikidata.org/sparql
+#+ method: GET
+#+ pagination: 5
+#+ defaults:
+#+   - label_str: default_value
+
+SELECT distinct ?item ?itemLabel ?itemDescription WHERE{  
+  ?item ?label ?_label_str_iri@en.  
+  ?article schema:about ?item .
+  ?article schema:inLanguage "en" .
+  ?article schema:isPartOf <https://en.wikipedia.org/>. 
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }    
+}
