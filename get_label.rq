@@ -1,3 +1,8 @@
+#+ summary: Find Wikidata entities by label substring
+#+ endpoint: https://query.wikidata.org/sparql
+#+ pagination: 5
+#+ method: GET
+
 #+ defaults:
 #+   - label_str: example
 
