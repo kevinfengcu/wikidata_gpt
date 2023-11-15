@@ -1,0 +1,14 @@
+#+ summary: Arbitrary query
+#+ endpoint: https://query.wikidata.org/sparql
+#+ method: GET
+
+#+ defaults:
+#+   - query: example
+
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/>
+
+SELECT * WHERE {  
+  ?_query
+}
