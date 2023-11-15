@@ -1,0 +1,18 @@
+#+ summary: Find Wikidata properties by label substring
+#+ endpoint: https://query.wikidata.org/sparql
+#+ method: GET
+
+#+ defaults:
+#+   - label_str: example
+
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?property ?propertyLabel WHERE {
+  ?property a wikibase:Property .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". 
+                           ?property rdfs:label ?propertyLabel
+                         }
+  FILTER(CONTAINS(LCASE(?propertyLabel), "video"))
+}
