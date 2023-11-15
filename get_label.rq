@@ -10,7 +10,7 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX schema: <http://schema.org/>
 
 SELECT distinct ?item ?itemLabel ?itemDescription WHERE {  
-  ?item ?label ?_label_str .  
+  ?item ?label ?_label_en .  
   ?article schema:about ?item .
   ?article schema:inLanguage "en" .
   ?article schema:isPartOf <https://en.wikipedia.org/>. 
