@@ -1,4 +1,9 @@
+#+ defaults:
+#+   - label_str: example
 
+PREFIX bd: <http://www.bigdata.com/rdf#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX schema: <http://schema.org/>
 
 SELECT distinct ?item ?itemLabel ?itemDescription WHERE {  
   ?item ?label ?_label_str_iri .  
