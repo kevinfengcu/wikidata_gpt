@@ -5,7 +5,7 @@
 #+ defaults:
 #+   - label_str: default_value
 
-SELECT distinct ?item ?itemLabel ?itemDescription WHERE{  
+SELECT distinct ?item ?itemLabel ?itemDescription WHERE {  
   ?item ?label ?_label_str_iri@en.  
   ?article schema:about ?item .
   ?article schema:inLanguage "en" .
