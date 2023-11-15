@@ -1,0 +1,19 @@
+#+ summary: List all properties and their values for a Wikidata entity.
+#+ endpoint: https://query.wikidata.org/sparql
+#+ method: GET
+
+#+ defaults:
+#+   - qid: example
+
+
+SELECT ?property ?propertyLabel ?object (COALESCE(?valueLabel, STR(?o)) AS ?value) WHERE {
+  ?property wikibase:directClaim ?p;
+            rdfs:label ?propertyLabel filter (lang(?propertyLabel) = "en").
+  ?qid ?p ?object.
+  
+  OPTIONAL {
+    ?o rdfs:label ?valueLabel filter (lang(?valueLabel) = "en").
+  }
+  FILTER(!CONTAINS(LCASE(?propertyLabel), "id"))
+  
+}
