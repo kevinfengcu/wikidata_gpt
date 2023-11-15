@@ -14,7 +14,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 SELECT ?property ?propertyLabel ?object (COALESCE(?valueLabel, STR(?o)) AS ?value) WHERE {
   ?property wikibase:directClaim ?p;
             rdfs:label ?propertyLabel filter (lang(?propertyLabel) = "en").
-  ?_qid_wd ?p ?object.
+  ?_qid_iri ?p ?object.
   
   OPTIONAL {
     ?o rdfs:label ?valueLabel filter (lang(?valueLabel) = "en").
