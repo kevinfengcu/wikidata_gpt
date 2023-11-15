@@ -14,5 +14,5 @@ SELECT ?property ?propertyLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". 
                            ?property rdfs:label ?propertyLabel
                          }
-  FILTER(CONTAINS(LCASE(?propertyLabel), "video"))
+  FILTER(CONTAINS(LCASE(?propertyLabel), ?_label_str))
 }
