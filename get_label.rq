@@ -1,7 +1,7 @@
 
 
 SELECT distinct ?item ?itemLabel ?itemDescription WHERE {  
-  ?item ?label ?_label_str_iri@en.  
+  ?item ?label ?_label_str_iri .  
   ?article schema:about ?item .
   ?article schema:inLanguage "en" .
   ?article schema:isPartOf <https://en.wikipedia.org/>. 
